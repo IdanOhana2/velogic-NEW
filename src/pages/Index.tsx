@@ -4,11 +4,14 @@ import React from 'react';
 import { Clock, Ban, Smartphone, Palette, CheckCircle2 } from 'lucide-react';
 import ValueCard from '@/components/ValueCard';
 import HeroCharacter from '@/components/HeroCharacter';
+import LoadingScreen from '@/components/LoadingScreen';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-hidden selection:bg-primary/30">
+      <LoadingScreen />
+      
       {/* Main Content Container */}
       <main className="container mx-auto px-4 pt-20 pb-32 relative">
         
