@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Clock, ThumbsUp, Zap, ShieldCheck, ChevronLeft, ChevronRight, Calendar, CheckCircle2 } from 'lucide-react';
+import { ThumbsUp, Zap, ShieldCheck, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const HeroCharacter = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -44,17 +44,6 @@ const HeroCharacter = () => {
         {/* The "Holographic Booking" Head Area */}
         <div className="w-64 h-64 relative perspective-1000 flex flex-col items-center justify-center">
           
-          {/* 3D Floating Hebrew Text */}
-          <div className="absolute -top-12 z-20 animate-float text-center pointer-events-none">
-            <div className="relative">
-              <h2 className="text-2xl md:text-3xl font-black text-[#e2b091] drop-shadow-[0_0_15px_rgba(226,176,145,0.8)] transform -rotate-x-12 skew-x-[-5deg] select-none">
-                אפליקציה לניהול תורים ועסק
-              </h2>
-              {/* Glow Aura */}
-              <div className="absolute inset-0 blur-2xl bg-[#e2b091]/20 -z-10 rounded-full scale-150" />
-            </div>
-          </div>
-
           {/* Central Logo - Floating */}
           <div className="relative z-10 w-32 h-32 flex items-center justify-center">
             <img 
@@ -64,34 +53,8 @@ const HeroCharacter = () => {
             />
           </div>
 
-          {/* Floating Booking Elements */}
-          <div className="absolute inset-0 pointer-events-none">
-            {/* Time Slot 1 */}
-            <div className="absolute top-4 left-4 bg-[#e2b091]/20 backdrop-blur-md border border-[#e2b091]/40 rounded-lg px-2 py-1 flex items-center gap-1 animate-float" style={{ animationDelay: '0.5s' }}>
-              <Clock size={10} className="text-[#e2b091]" />
-              <span className="text-[8px] text-[#e2b091] font-bold">10:30 AM</span>
-            </div>
-            
-            {/* Confirmed Badge */}
-            <div className="absolute bottom-6 right-4 bg-green-500/20 backdrop-blur-md border border-green-500/50 rounded-full px-2 py-1 flex items-center gap-1 animate-float" style={{ animationDelay: '1.5s' }}>
-              <CheckCircle2 size={10} className="text-green-400" />
-              <span className="text-[8px] text-green-400 font-bold">BOOKED</span>
-            </div>
-
-            {/* Calendar Icon */}
-            <div className="absolute top-10 right-6 opacity-60 animate-spin-slow">
-              <Calendar size={24} className="text-[#e2b091]" />
-            </div>
-
-            {/* Scanning Line Effect */}
-            <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-transparent via-[#e2b091]/20 to-transparent h-1/2 w-full animate-scan pointer-events-none" />
-          </div>
-
-          {/* External Floating UI Elements */}
-          <div className="absolute -top-8 -right-8 w-20 h-20 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl flex flex-col items-center justify-center shadow-2xl animate-float">
-             <div className="text-[10px] text-white/60 uppercase tracking-tighter">Next Appt</div>
-             <div className="text-lg font-bold text-[#e2b091]">14:00</div>
-          </div>
+          {/* Scanning Line Effect */}
+          <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-transparent via-[#e2b091]/20 to-transparent h-1/2 w-full animate-scan pointer-events-none" />
         </div>
 
         {/* Suit & Body */}
@@ -157,7 +120,6 @@ const HeroCharacter = () => {
           100% { transform: translateY(200%); }
         }
         .animate-scan { animation: scan 3s linear infinite; }
-        .animate-spin-slow { animation: spin 8s linear infinite; }
       `}} />
     </div>
   );
