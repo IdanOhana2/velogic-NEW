@@ -44,14 +44,7 @@ const HeroCharacter = () => {
         {/* The "Holographic Booking" Head Area */}
         <div className="w-64 h-64 relative perspective-1000 flex flex-col items-center justify-center">
           
-          {/* Central Logo - Floating */}
-          <div className="relative z-10 w-32 h-32 flex items-center justify-center">
-            <img 
-              src="/velogic-logo-gold.png" 
-              alt="Velogic Logo" 
-              className="w-full h-auto object-contain animate-pulse drop-shadow-[0_0_30px_rgba(226,176,145,0.8)]"
-            />
-          </div>
+          {/* Central Logo - Removed as requested */}
 
           {/* Scanning Line Effect */}
           <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-transparent via-[#e2b091]/20 to-transparent h-1/2 w-full animate-scan pointer-events-none" />
