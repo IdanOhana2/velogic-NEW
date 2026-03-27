@@ -97,8 +97,8 @@ const LoadingScreen = () => {
           <div className="h-full bg-primary animate-[load_4s_ease-in-out_forwards]" style={{ width: '0%' }} />
         </div>
         
-        <p className="mt-6 text-primary/80 text-[10px] tracking-[0.4em] uppercase font-medium animate-pulse">
-          Building Your Business Logic
+        <p className="mt-6 text-primary/80 text-sm tracking-widest font-bold animate-pulse text-center">
+          אפליקציה ממותגת אישית לעסק שלך
         </p>
       </div>
 
