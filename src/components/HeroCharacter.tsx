@@ -41,49 +41,43 @@ const HeroCharacter = () => {
       {/* Character Representation */}
       <div className="relative z-10 flex flex-col items-center">
         
-        {/* The "Holographic Booking" Head */}
-        <div className="w-56 h-56 relative perspective-1000">
-          {/* Main Head Container */}
-          <div className="absolute inset-0 rounded-[2.5rem] border-2 border-[#e2b091]/30 bg-black/80 backdrop-blur-xl shadow-[0_0_60px_rgba(226,176,145,0.2)] overflow-hidden flex items-center justify-center">
-            
-            {/* Animated Grid Background */}
-            <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,#e2b091_1px,transparent_1px),linear-gradient(to_bottom,#e2b091_1px,transparent_1px)] bg-[size:20px_20px]" />
-            
-            {/* Central Logo */}
-            <div className="relative z-10 w-32 h-32 flex items-center justify-center">
-              <img 
-                src="/velogic-logo-gold.png" 
-                alt="Velogic Logo" 
-                className="w-full h-auto object-contain animate-pulse drop-shadow-[0_0_20px_rgba(226,176,145,0.6)]"
-              />
-            </div>
-
-            {/* Floating Booking Elements inside the head */}
-            <div className="absolute inset-0 pointer-events-none">
-              {/* Time Slot 1 */}
-              <div className="absolute top-4 left-4 bg-[#e2b091]/10 border border-[#e2b091]/40 rounded-lg px-2 py-1 flex items-center gap-1 animate-float" style={{ animationDelay: '0.5s' }}>
-                <Clock size={10} className="text-[#e2b091]" />
-                <span className="text-[8px] text-[#e2b091] font-bold">10:30 AM</span>
-              </div>
-              
-              {/* Confirmed Badge */}
-              <div className="absolute bottom-6 right-4 bg-green-500/20 border border-green-500/50 rounded-full px-2 py-1 flex items-center gap-1 animate-float" style={{ animationDelay: '1.5s' }}>
-                <CheckCircle2 size={10} className="text-green-400" />
-                <span className="text-[8px] text-green-400 font-bold">BOOKED</span>
-              </div>
-
-              {/* Calendar Icon */}
-              <div className="absolute top-10 right-6 opacity-40 animate-spin-slow">
-                <Calendar size={24} className="text-[#e2b091]" />
-              </div>
-            </div>
-
-            {/* Scanning Line Effect */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#e2b091]/10 to-transparent h-1/2 w-full animate-scan pointer-events-none" />
+        {/* The "Holographic Booking" Head Area */}
+        <div className="w-56 h-56 relative perspective-1000 flex items-center justify-center">
+          
+          {/* Central Logo - Floating */}
+          <div className="relative z-10 w-32 h-32 flex items-center justify-center">
+            <img 
+              src="/velogic-logo-gold.png" 
+              alt="Velogic Logo" 
+              className="w-full h-auto object-contain animate-pulse drop-shadow-[0_0_30px_rgba(226,176,145,0.8)]"
+            />
           </div>
 
-          {/* External Floating UI Elements around the head */}
-          <div className="absolute -top-8 -right-8 w-20 h-20 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl flex flex-col items-center justify-center shadow-2xl animate-float">
+          {/* Floating Booking Elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Time Slot 1 */}
+            <div className="absolute top-4 left-4 bg-[#e2b091]/20 backdrop-blur-md border border-[#e2b091]/40 rounded-lg px-2 py-1 flex items-center gap-1 animate-float" style={{ animationDelay: '0.5s' }}>
+              <Clock size={10} className="text-[#e2b091]" />
+              <span className="text-[8px] text-[#e2b091] font-bold">10:30 AM</span>
+            </div>
+            
+            {/* Confirmed Badge */}
+            <div className="absolute bottom-6 right-4 bg-green-500/20 backdrop-blur-md border border-green-500/50 rounded-full px-2 py-1 flex items-center gap-1 animate-float" style={{ animationDelay: '1.5s' }}>
+              <CheckCircle2 size={10} className="text-green-400" />
+              <span className="text-[8px] text-green-400 font-bold">BOOKED</span>
+            </div>
+
+            {/* Calendar Icon */}
+            <div className="absolute top-10 right-6 opacity-60 animate-spin-slow">
+              <Calendar size={24} className="text-[#e2b091]" />
+            </div>
+
+            {/* Scanning Line Effect - Now floating */}
+            <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-transparent via-[#e2b091]/20 to-transparent h-1/2 w-full animate-scan pointer-events-none" />
+          </div>
+
+          {/* External Floating UI Elements */}
+          <div className="absolute -top-8 -right-8 w-20 h-20 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl flex flex-col items-center justify-center shadow-2xl animate-float">
              <div className="text-[10px] text-white/60 uppercase tracking-tighter">Next Appt</div>
              <div className="text-lg font-bold text-[#e2b091]">14:00</div>
           </div>
