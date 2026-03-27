@@ -26,8 +26,18 @@ const Index = () => {
       </div>
       
       {/* Main Content Container */}
-      <main className="container mx-auto px-4 pt-20 pb-32 relative z-20">
+      <main className="container mx-auto px-4 pt-12 pb-32 relative z-20">
         
+        {/* Master Wordmark - Moved to Top */}
+        <div className="mb-12 text-center animate-in fade-in slide-in-from-top-8 duration-1000">
+          <h1 className="text-7xl md:text-9xl font-black tracking-tighter rose-gold-text drop-shadow-2xl">
+            VELOGIC
+          </h1>
+          <p className="text-primary/60 tracking-[0.5em] text-sm mt-4 font-light uppercase">
+            Business Logic & Automation
+          </p>
+        </div>
+
         {/* Hero Section */}
         <div className="flex flex-col items-center justify-center relative">
           
@@ -90,16 +100,6 @@ const Index = () => {
               <CheckCircle2 className="w-4 h-4 text-green-400" />
               <span className="text-xs font-medium text-white/80">BOOKINGS COMPLETE</span>
             </div>
-          </div>
-
-          {/* Master Wordmark */}
-          <div className="mt-20 text-center">
-            <h1 className="text-7xl md:text-9xl font-black tracking-tighter rose-gold-text drop-shadow-2xl">
-              VELOGIC
-            </h1>
-            <p className="text-primary/60 tracking-[0.5em] text-sm mt-4 font-light uppercase">
-              Business Logic & Automation
-            </p>
           </div>
 
         </div>
