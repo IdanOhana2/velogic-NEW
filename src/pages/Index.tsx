@@ -9,20 +9,12 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background overflow-hidden selection:bg-primary/30 relative">
+    <div className="min-h-screen bg-black overflow-hidden selection:bg-primary/30 relative">
       <LoadingScreen />
       
-      {/* Hero Background Image - Brighter and Better Blending */}
-      <div className="absolute top-0 left-0 w-full h-screen pointer-events-none z-0">
-        {/* Multi-layered gradient for perfect blending */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10" />
-        
-        <img 
-          src="/hero-bg.png" 
-          alt="Background" 
-          className="w-full h-full object-cover opacity-60 brightness-125 saturate-[1.1]"
-        />
+      {/* Subtle Radial Glow for Depth */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]" />
       </div>
       
       {/* Main Content Container */}
