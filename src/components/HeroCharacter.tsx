@@ -55,23 +55,13 @@ const HeroCharacter = () => {
         </div>
 
         {/* Suit & Body */}
-        <div className="w-64 h-80 bg-gradient-to-b from-[#2d1b4d] to-[#1a2a2a] rounded-t-[4rem] mt-[-20px] relative shadow-2xl">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-40 bg-black/40 flex flex-col items-center pt-4">
-             <div className="w-4 h-4 bg-primary rounded-full shadow-[0_0_10px_rgba(226,176,145,0.8)]" />
-          </div>
+        <div className="w-64 h-80 bg-gradient-to-b from-[#2d1b4d] to-[#1a2a2a] rounded-t-[4rem] mt-[-20px] relative shadow-2xl flex items-center justify-center">
           
-          {/* Thumbs Up Hand */}
-          <div className="absolute -right-12 top-20 animate-bounce">
-            <div className="bg-[#e2b091] p-4 rounded-full shadow-xl">
-              <ThumbsUp className="w-8 h-8 text-black" />
-            </div>
-          </div>
-
-          {/* 3D Floating Smartphone */}
-          <div className="absolute -left-24 bottom-4 w-48 h-96 animate-float perspective-1000">
-            <div className="relative w-full h-full transition-transform duration-500 preserve-3d rotate-y-[-15deg] rotate-x-[5deg] hover:rotate-y-0">
+          {/* 3D Floating Smartphone - Now Centered on Body */}
+          <div className="relative w-44 h-[22rem] animate-float perspective-1000 z-20">
+            <div className="relative w-full h-full transition-transform duration-500 preserve-3d hover:rotate-y-12">
               {/* Phone Frame */}
-              <div className="absolute inset-0 bg-zinc-900 rounded-[2.5rem] border-[6px] border-zinc-800 shadow-[20px_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
+              <div className="absolute inset-0 bg-zinc-900 rounded-[2.5rem] border-[6px] border-zinc-800 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden">
                 {/* Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-6 bg-zinc-800 rounded-b-2xl z-30" />
                 
@@ -107,9 +97,13 @@ const HeroCharacter = () => {
                   </div>
                 </div>
               </div>
-              
-              {/* 3D Side Depth Effect */}
-              <div className="absolute top-0 -right-[6px] w-[6px] h-full bg-zinc-700 origin-left rotate-y-90" />
+            </div>
+          </div>
+
+          {/* Thumbs Up Hand */}
+          <div className="absolute -right-12 top-20 animate-bounce">
+            <div className="bg-[#e2b091] p-4 rounded-full shadow-xl">
+              <ThumbsUp className="w-8 h-8 text-black" />
             </div>
           </div>
         </div>
@@ -126,9 +120,6 @@ const HeroCharacter = () => {
       <style dangerouslySetInnerHTML={{ __html: `
         .perspective-1000 { perspective: 1000px; }
         .preserve-3d { transform-style: preserve-3d; }
-        .rotate-y-[-15deg] { transform: rotateY(-15deg); }
-        .rotate-x-[5deg] { transform: rotateX(5deg); }
-        .rotate-y-90 { transform: rotateY(90deg); }
       `}} />
     </div>
   );
