@@ -12,16 +12,16 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-hidden selection:bg-primary/30 relative">
       <LoadingScreen />
       
-      {/* Hero Background Image with Enhanced Visibility */}
-      <div className="absolute top-0 left-0 w-full h-[85vh] pointer-events-none z-0">
-        {/* Smooth Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background z-10" />
+      {/* Hero Background Image - Brighter and Better Blending */}
+      <div className="absolute top-0 left-0 w-full h-screen pointer-events-none z-0">
+        {/* Multi-layered gradient for perfect blending */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10" />
         
-        {/* Background Image with better brightness and subtle blur */}
         <img 
           src="/hero-bg.png" 
           alt="Background" 
-          className="w-full h-full object-cover opacity-40 saturate-[1.2] brightness-110 blur-[2px]"
+          className="w-full h-full object-cover opacity-60 brightness-125 saturate-[1.1]"
         />
       </div>
       
