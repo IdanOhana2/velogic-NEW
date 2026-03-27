@@ -42,8 +42,19 @@ const HeroCharacter = () => {
       <div className="relative z-10 flex flex-col items-center">
         
         {/* The "Holographic Booking" Head Area */}
-        <div className="w-56 h-56 relative perspective-1000 flex items-center justify-center">
+        <div className="w-64 h-64 relative perspective-1000 flex flex-col items-center justify-center">
           
+          {/* 3D Floating Hebrew Text */}
+          <div className="absolute -top-12 z-20 animate-float text-center pointer-events-none">
+            <div className="relative">
+              <h2 className="text-2xl md:text-3xl font-black text-[#e2b091] drop-shadow-[0_0_15px_rgba(226,176,145,0.8)] transform -rotate-x-12 skew-x-[-5deg] select-none">
+                אפליקציה לניהול תורים ועסק
+              </h2>
+              {/* Glow Aura */}
+              <div className="absolute inset-0 blur-2xl bg-[#e2b091]/20 -z-10 rounded-full scale-150" />
+            </div>
+          </div>
+
           {/* Central Logo - Floating */}
           <div className="relative z-10 w-32 h-32 flex items-center justify-center">
             <img 
@@ -72,7 +83,7 @@ const HeroCharacter = () => {
               <Calendar size={24} className="text-[#e2b091]" />
             </div>
 
-            {/* Scanning Line Effect - Now floating */}
+            {/* Scanning Line Effect */}
             <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-transparent via-[#e2b091]/20 to-transparent h-1/2 w-full animate-scan pointer-events-none" />
           </div>
 
