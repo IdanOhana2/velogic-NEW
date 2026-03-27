@@ -9,11 +9,21 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background overflow-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-background overflow-hidden selection:bg-primary/30 relative">
       <LoadingScreen />
       
+      {/* Hero Background Image with Fade */}
+      <div className="absolute top-0 left-0 w-full h-[70vh] pointer-events-none z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10" />
+        <img 
+          src="/hero-bg.png" 
+          alt="Background" 
+          className="w-full h-full object-cover opacity-20"
+        />
+      </div>
+      
       {/* Main Content Container */}
-      <main className="container mx-auto px-4 pt-20 pb-32 relative">
+      <main className="container mx-auto px-4 pt-20 pb-32 relative z-20">
         
         {/* Hero Section */}
         <div className="flex flex-col items-center justify-center relative">
@@ -92,7 +102,7 @@ const Index = () => {
         </div>
       </main>
 
-      <footer className="fixed bottom-0 w-full border-t border-white/5 bg-black/20 backdrop-blur-md">
+      <footer className="fixed bottom-0 w-full border-t border-white/5 bg-black/20 backdrop-blur-md z-30">
         <MadeWithDyad />
       </footer>
     </div>
