@@ -5,6 +5,7 @@ import { Clock, Ban, Smartphone, Palette, CheckCircle2 } from 'lucide-react';
 import ValueCard from '@/components/ValueCard';
 import HeroCharacter from '@/components/HeroCharacter';
 import LoadingScreen from '@/components/LoadingScreen';
+import TechBackground from '@/components/TechBackground';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
@@ -12,10 +13,8 @@ const Index = () => {
     <div className="min-h-screen bg-black overflow-hidden selection:bg-primary/30 relative">
       <LoadingScreen />
       
-      {/* Subtle Radial Glow for Depth */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]" />
-      </div>
+      {/* 3D Tech Background */}
+      <TechBackground />
       
       {/* Main Content Container */}
       <main className="container mx-auto px-4 pt-12 pb-32 relative z-20">
