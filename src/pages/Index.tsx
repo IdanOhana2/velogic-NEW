@@ -1,14 +1,14 @@
 "use client";
 
 import React from 'react';
-import { Clock, Ban, Smartphone, Palette, CheckCircle2 } from 'lucide-react';
-import ValueCard from '@/components/ValueCard';
+import { CheckCircle2 } from 'lucide-react';
 import HeroCharacter from '@/components/HeroCharacter';
 import LoadingScreen from '@/components/LoadingScreen';
 import TechBackground from '@/components/TechBackground';
 import BrandSection from '@/components/BrandSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import Navbar from '@/components/Navbar';
+import VideoShowcase from '@/components/VideoShowcase';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
@@ -16,16 +16,12 @@ const Index = () => {
     <div className="min-h-screen bg-black overflow-x-hidden selection:bg-primary/30 relative">
       <LoadingScreen />
       
-      {/* Navigation Bar */}
       <Navbar />
       
-      {/* 3D Tech Background */}
       <TechBackground />
       
-      {/* Main Content Container */}
       <main className="container mx-auto px-4 pt-32 pb-32 relative z-20">
         
-        {/* Master Wordmark */}
         <div className="mb-12 text-center animate-in fade-in slide-in-from-top-8 duration-1000">
           <h1 className="text-7xl md:text-9xl font-black tracking-tighter rose-gold-text drop-shadow-2xl">
             VELOGIC
@@ -35,41 +31,37 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Brand Section */}
         <BrandSection />
 
-        {/* Features Section with Mascot */}
         <FeaturesSection />
 
-        {/* Hero Section */}
         <div className="flex flex-col items-center justify-center relative mt-24">
           
-          {/* Floating Cards - Desktop Layout */}
+          {/* Video Showcases - Desktop Layout */}
           <div className="absolute inset-0 pointer-events-none hidden lg:block">
-            <div className="absolute top-20 left-[10%]">
-              <ValueCard title="עסק שעובד 24/7" subtitle="סגירת תורים אוטומטית" icon={Clock} delay="0s" />
+            <div className="absolute top-0 left-[5%] animate-float">
+              <VideoShowcase 
+                title="ניהול תורים חכם" 
+                subtitle="הכל קורה מעצמו" 
+              />
             </div>
-            <div className="absolute top-1/2 left-[5%] -translate-y-1/2">
-              <ValueCard title="סוף לביטולים והברזות" subtitle="חיוב מקדמה ודמי ביטול" icon={Ban} delay="1.5s" />
-            </div>
-            <div className="absolute top-20 right-[10%]">
-              <ValueCard title="חוויית לקוח מושלמת" subtitle="קביעת תור ב-3 קליקים" icon={Smartphone} delay="0.7s" />
-            </div>
-            <div className="absolute top-1/2 right-[5%] -translate-y-1/2">
-              <ValueCard title="העסק שלך ממותג" subtitle="מעוצב בצבעי המותג שלך" icon={Palette} delay="2.2s" />
+            <div className="absolute top-0 right-[5%] animate-float" style={{ animationDelay: '1s' }}>
+              <VideoShowcase 
+                title="חוויית משתמש" 
+                subtitle="מהירה וחלקה" 
+              />
             </div>
           </div>
 
           {/* Central Character */}
           <HeroCharacter />
 
-          {/* Mobile Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12 lg:hidden">
-            <ValueCard title="עסק שעובד 24/7" subtitle="סגירת תורים אוטומטית" icon={Clock} />
-            <ValueCard title="חוויית לקוח מושלמת" subtitle="קביעת תור ב-3 קליקים" icon={Smartphone} />
+          {/* Mobile Video Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 lg:hidden">
+            <VideoShowcase title="ניהול תורים חכם" subtitle="הכל קורה מעצמו" />
+            <VideoShowcase title="חוויית משתמש" subtitle="מהירה וחלקה" />
           </div>
 
-          {/* Status Indicators */}
           <div className="mt-12 flex gap-6 items-center">
             <div className="glass-card px-4 py-2 rounded-full flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-400" />
