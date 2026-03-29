@@ -8,6 +8,7 @@ import TechBackground from '@/components/TechBackground';
 import BrandSection from '@/components/BrandSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import Navbar from '@/components/Navbar';
+import HeroVideoBackground from '@/components/HeroVideoBackground';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
@@ -17,6 +18,8 @@ const Index = () => {
       
       <Navbar />
       
+      {/* Background Layers */}
+      <HeroVideoBackground />
       <TechBackground />
       
       <main className="container mx-auto px-4 pt-32 pb-32 relative z-20">
