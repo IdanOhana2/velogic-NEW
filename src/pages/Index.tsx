@@ -18,45 +18,55 @@ const Index = () => {
       
       <Navbar />
       
-      {/* Background Layers */}
+      {/* Hero Video Layer - Full prominence at the top */}
       <HeroVideoBackground />
+      
+      {/* Tech Animations Layer - Starts lower and continues down */}
       <TechBackground />
       
-      <main className="container mx-auto px-4 pt-32 pb-32 relative z-20">
-        
-        <div className="mb-12 text-center animate-in fade-in slide-in-from-top-8 duration-1000">
-          <h1 className="text-7xl md:text-9xl font-black tracking-tighter rose-gold-text drop-shadow-2xl">
-            VELOGIC
-          </h1>
-          <p className="text-primary/60 tracking-[0.5em] text-sm mt-4 font-light uppercase">
-            Business Logic & Automation
-          </p>
-        </div>
-
-        <BrandSection />
-
-        <FeaturesSection />
-
-        <div className="flex flex-col items-center justify-center relative mt-24">
+      <main className="relative z-20">
+        {/* Hero Content Section */}
+        <section className="min-h-screen flex flex-col items-center justify-center pt-20 px-4">
+          <div className="text-center animate-in fade-in slide-in-from-top-12 duration-1000">
+            <h1 className="text-7xl md:text-[12rem] font-black tracking-tighter rose-gold-text drop-shadow-[0_0_50px_rgba(226,176,145,0.3)] leading-none">
+              VELOGIC
+            </h1>
+            <p className="text-primary/80 tracking-[0.8em] text-sm md:text-base mt-6 font-medium uppercase">
+              Business Logic & Automation
+            </p>
+          </div>
           
-          {/* Central Character */}
-          <HeroCharacter />
+          {/* Scroll Indicator or subtle hint */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <div className="w-1 h-12 bg-gradient-to-b from-primary to-transparent rounded-full" />
+          </div>
+        </section>
 
-          <div className="mt-12 flex gap-6 items-center">
-            <div className="glass-card px-4 py-2 rounded-full flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-green-400" />
-              <span className="text-xs font-medium text-white/80">YOMAN SAGUR</span>
-            </div>
-            <div className="glass-card px-4 py-2 rounded-full flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-green-400" />
-              <span className="text-xs font-medium text-white/80">BOOKINGS COMPLETE</span>
+        {/* Content Sections - These will have the TechBackground behind them */}
+        <div className="container mx-auto px-4 space-y-32 pb-32">
+          <BrandSection />
+
+          <FeaturesSection />
+
+          <div className="flex flex-col items-center justify-center relative">
+            {/* Central Character */}
+            <HeroCharacter />
+
+            <div className="mt-12 flex gap-6 items-center">
+              <div className="glass-card px-6 py-3 rounded-full flex items-center gap-3 border-primary/30">
+                <CheckCircle2 className="w-5 h-5 text-green-400" />
+                <span className="text-sm font-bold text-white/90 tracking-wide">YOMAN SAGUR</span>
+              </div>
+              <div className="glass-card px-6 py-3 rounded-full flex items-center gap-3 border-primary/30">
+                <CheckCircle2 className="w-5 h-5 text-green-400" />
+                <span className="text-sm font-bold text-white/90 tracking-wide">BOOKINGS COMPLETE</span>
+              </div>
             </div>
           </div>
-
         </div>
       </main>
 
-      <footer className="fixed bottom-0 w-full border-t border-white/5 bg-black/20 backdrop-blur-md z-30">
+      <footer className="relative w-full border-t border-white/5 bg-black/40 backdrop-blur-xl z-30">
         <MadeWithDyad />
       </footer>
     </div>
