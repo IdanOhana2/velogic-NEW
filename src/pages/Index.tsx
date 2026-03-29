@@ -8,6 +8,7 @@ import LoadingScreen from '@/components/LoadingScreen';
 import TechBackground from '@/components/TechBackground';
 import BrandSection from '@/components/BrandSection';
 import FeaturesSection from '@/components/FeaturesSection';
+import Navbar from '@/components/Navbar';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
@@ -15,11 +16,14 @@ const Index = () => {
     <div className="min-h-screen bg-black overflow-x-hidden selection:bg-primary/30 relative">
       <LoadingScreen />
       
+      {/* Navigation Bar */}
+      <Navbar />
+      
       {/* 3D Tech Background */}
       <TechBackground />
       
       {/* Main Content Container */}
-      <main className="container mx-auto px-4 pt-12 pb-32 relative z-20">
+      <main className="container mx-auto px-4 pt-32 pb-32 relative z-20">
         
         {/* Master Wordmark */}
         <div className="mb-12 text-center animate-in fade-in slide-in-from-top-8 duration-1000">
