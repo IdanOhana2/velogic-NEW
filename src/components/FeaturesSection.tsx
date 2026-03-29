@@ -62,12 +62,12 @@ const FeaturesSection = () => {
     <div className="w-full max-w-6xl mx-auto mt-32 mb-32 px-6">
       <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
         
-        {/* Right Side: New Mascot Image */}
+        {/* Right Side: Mascot */}
         <div className="relative flex-1 flex justify-center items-center">
           <div className="absolute w-[300px] h-[300px] bg-primary/20 blur-[100px] rounded-full animate-pulse" />
           <div className="relative z-10 animate-float-3d-intense">
             <img 
-              src="/src/assets/Gemini_Generated_Image_pdxn5qpdxn5qpdxn-removebg-preview.png" 
+              src="/src/assets/velogic-mascot.png" 
               alt="Velogic Mascot" 
               className="w-[350px] md:w-[500px] drop-shadow-[0_35px_60px_rgba(226,176,145,0.4)]"
             />
