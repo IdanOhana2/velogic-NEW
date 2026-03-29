@@ -43,9 +43,6 @@ const HeroCharacter = () => {
         
         {/* The "Holographic Booking" Head Area */}
         <div className="w-64 h-64 relative perspective-1000 flex flex-col items-center justify-center">
-          
-          {/* Central Logo - Removed as requested */}
-
           {/* Scanning Line Effect */}
           <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-transparent via-[#e2b091]/20 to-transparent h-1/2 w-full animate-scan pointer-events-none" />
         </div>
@@ -53,8 +50,16 @@ const HeroCharacter = () => {
         {/* Suit & Body */}
         <div className="w-64 h-80 bg-gradient-to-b from-[#2d1b4d] to-[#1a2a2a] rounded-t-[4rem] mt-[-20px] relative shadow-2xl flex items-center justify-center">
           
-          {/* 3D Floating Smartphone */}
+          {/* 3D Floating Smartphone Container */}
           <div className="relative w-44 h-[22rem] animate-float perspective-1000 z-20">
+            
+            {/* Glowing Orbiting Trail */}
+            <div className="absolute inset-[-40px] pointer-events-none z-30">
+              <div className="absolute w-4 h-4 bg-primary rounded-full blur-md animate-orbit" />
+              <div className="absolute w-3 h-3 bg-white rounded-full blur-sm animate-orbit" style={{ animationDelay: '-2s' }} />
+              <div className="absolute w-2 h-2 bg-primary rounded-full blur-[2px] animate-orbit" style={{ animationDelay: '-4s' }} />
+            </div>
+
             <div className="relative w-full h-full transition-transform duration-500 preserve-3d hover:rotate-y-12">
               <div className="absolute inset-0 bg-zinc-900 rounded-[2.5rem] border-[6px] border-zinc-800 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-6 bg-zinc-800 rounded-b-2xl z-30" />
@@ -113,6 +118,19 @@ const HeroCharacter = () => {
           100% { transform: translateY(200%); }
         }
         .animate-scan { animation: scan 3s linear infinite; }
+        
+        @keyframes orbit {
+          0% { transform: rotate(0deg) translateX(120px) rotate(0deg) scale(1); opacity: 0.8; }
+          25% { transform: rotate(90deg) translateX(140px) rotate(-90deg) scale(1.2); opacity: 1; }
+          50% { transform: rotate(180deg) translateX(120px) rotate(-180deg) scale(1); opacity: 0.8; }
+          75% { transform: rotate(270deg) translateX(100px) rotate(-270deg) scale(0.8); opacity: 0.5; }
+          100% { transform: rotate(360deg) translateX(120px) rotate(-360deg) scale(1); opacity: 0.8; }
+        }
+        .animate-orbit {
+          animation: orbit 6s linear infinite;
+          top: 50%;
+          left: 50%;
+        }
       `}} />
     </div>
   );
