@@ -25,7 +25,7 @@ const VideoShowcase = ({ className, title, subtitle }: VideoShowcaseProps) => {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="https://cdn.pixabay.com/video/2020/09/03/48914-456436363_large.mp4" type="video/mp4" />
+            <source src="/src/assets/app-demo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           
