@@ -6,11 +6,12 @@ import ValueCard from '@/components/ValueCard';
 import HeroCharacter from '@/components/HeroCharacter';
 import LoadingScreen from '@/components/LoadingScreen';
 import TechBackground from '@/components/TechBackground';
+import BrandSection from '@/components/BrandSection';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black overflow-hidden selection:bg-primary/30 relative">
+    <div className="min-h-screen bg-black overflow-x-hidden selection:bg-primary/30 relative">
       <LoadingScreen />
       
       {/* 3D Tech Background */}
@@ -29,8 +30,11 @@ const Index = () => {
           </p>
         </div>
 
+        {/* New Brand Section */}
+        <BrandSection />
+
         {/* Hero Section */}
-        <div className="flex flex-col items-center justify-center relative">
+        <div className="flex flex-col items-center justify-center relative mt-24">
           
           {/* Floating Cards - Desktop Layout */}
           <div className="absolute inset-0 pointer-events-none hidden lg:block">
