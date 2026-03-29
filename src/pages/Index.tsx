@@ -7,6 +7,7 @@ import HeroCharacter from '@/components/HeroCharacter';
 import LoadingScreen from '@/components/LoadingScreen';
 import TechBackground from '@/components/TechBackground';
 import BrandSection from '@/components/BrandSection';
+import FeaturesSection from '@/components/FeaturesSection';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
@@ -20,7 +21,7 @@ const Index = () => {
       {/* Main Content Container */}
       <main className="container mx-auto px-4 pt-12 pb-32 relative z-20">
         
-        {/* Master Wordmark - Moved to Top */}
+        {/* Master Wordmark */}
         <div className="mb-12 text-center animate-in fade-in slide-in-from-top-8 duration-1000">
           <h1 className="text-7xl md:text-9xl font-black tracking-tighter rose-gold-text drop-shadow-2xl">
             VELOGIC
@@ -30,49 +31,28 @@ const Index = () => {
           </p>
         </div>
 
-        {/* New Brand Section */}
+        {/* Brand Section */}
         <BrandSection />
+
+        {/* Features Section with Mascot */}
+        <FeaturesSection />
 
         {/* Hero Section */}
         <div className="flex flex-col items-center justify-center relative mt-24">
           
           {/* Floating Cards - Desktop Layout */}
           <div className="absolute inset-0 pointer-events-none hidden lg:block">
-            {/* Top Left */}
             <div className="absolute top-20 left-[10%]">
-              <ValueCard 
-                title="עסק שעובד 24/7"
-                subtitle="סגירת תורים אוטומטית (אפילו בלילה!)"
-                icon={Clock}
-                delay="0s"
-              />
+              <ValueCard title="עסק שעובד 24/7" subtitle="סגירת תורים אוטומטית" icon={Clock} delay="0s" />
             </div>
-            {/* Middle Left */}
             <div className="absolute top-1/2 left-[5%] -translate-y-1/2">
-              <ValueCard 
-                title="סוף לביטולים והברזות"
-                subtitle="חיוב מקדמה ודמי ביטול מראש"
-                icon={Ban}
-                delay="1.5s"
-              />
+              <ValueCard title="סוף לביטולים והברזות" subtitle="חיוב מקדמה ודמי ביטול" icon={Ban} delay="1.5s" />
             </div>
-            {/* Top Right */}
             <div className="absolute top-20 right-[10%]">
-              <ValueCard 
-                title="חוויית לקוח מושלמת"
-                subtitle="קביעת תור ב-3 קליקים בלבד"
-                icon={Smartphone}
-                delay="0.7s"
-              />
+              <ValueCard title="חוויית לקוח מושלמת" subtitle="קביעת תור ב-3 קליקים" icon={Smartphone} delay="0.7s" />
             </div>
-            {/* Middle Right */}
             <div className="absolute top-1/2 right-[5%] -translate-y-1/2">
-              <ValueCard 
-                title="העסק שלך ממותג"
-                subtitle="מעוצב בצבעי המותג הייחודיים שלך"
-                icon={Palette}
-                delay="2.2s"
-              />
+              <ValueCard title="העסק שלך ממותג" subtitle="מעוצב בצבעי המותג שלך" icon={Palette} delay="2.2s" />
             </div>
           </div>
 
