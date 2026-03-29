@@ -77,8 +77,8 @@ const FeaturesSection = () => {
         {/* Left Side: Unified Feature Box */}
         <div className="flex-1 w-full">
           <div className="mb-8 text-right">
-            <h3 className="text-3xl md:text-5xl font-black text-white mb-4">
-              למה <span className="rose-gold-text">Velogic</span>?
+            <h3 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+              אתה בטח שואל <span className="rose-gold-text">למה אנחנו?</span>
             </h3>
             <div className="h-1.5 w-24 bg-primary rounded-full ml-auto" />
           </div>
