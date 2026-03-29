@@ -8,7 +8,6 @@ import TechBackground from '@/components/TechBackground';
 import BrandSection from '@/components/BrandSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import Navbar from '@/components/Navbar';
-import VideoShowcase from '@/components/VideoShowcase';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
@@ -37,30 +36,8 @@ const Index = () => {
 
         <div className="flex flex-col items-center justify-center relative mt-24">
           
-          {/* Video Showcases - Desktop Layout */}
-          <div className="absolute inset-0 pointer-events-none hidden lg:block">
-            <div className="absolute top-0 left-[5%] animate-float">
-              <VideoShowcase 
-                title="ניהול תורים חכם" 
-                subtitle="הכל קורה מעצמו" 
-              />
-            </div>
-            <div className="absolute top-0 right-[5%] animate-float" style={{ animationDelay: '1s' }}>
-              <VideoShowcase 
-                title="חוויית משתמש" 
-                subtitle="מהירה וחלקה" 
-              />
-            </div>
-          </div>
-
           {/* Central Character */}
           <HeroCharacter />
-
-          {/* Mobile Video Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 lg:hidden">
-            <VideoShowcase title="ניהול תורים חכם" subtitle="הכל קורה מעצמו" />
-            <VideoShowcase title="חוויית משתמש" subtitle="מהירה וחלקה" />
-          </div>
 
           <div className="mt-12 flex gap-6 items-center">
             <div className="glass-card px-4 py-2 rounded-full flex items-center gap-2">
