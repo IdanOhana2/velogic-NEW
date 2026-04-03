@@ -29,7 +29,7 @@ const AmitTzarfati = () => {
 
           {/* Title Area */}
           <div className="mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            <h1 className="text-6xl md:text-8xl font-black mb-4 tracking-tighter">
+            <h1 className="text-6xl md:text-9xl font-black mb-4 tracking-tighter">
               AMIT <span className="rose-gold-text">TZARFATI</span>
             </h1>
             <p className="text-white/40 tracking-[0.4em] text-sm uppercase font-medium">
@@ -37,49 +37,28 @@ const AmitTzarfati = () => {
             </p>
           </div>
 
-          {/* Phone Showcase */}
+          {/* App Store Button - Centered & Large */}
           <div className="relative group animate-in fade-in zoom-in duration-1000 delay-200">
-            {/* Glow behind phone */}
-            <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+            {/* Glow behind button */}
+            <div className="absolute inset-0 bg-primary/20 blur-[60px] rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-1000" />
             
-            <div className="relative w-[300px] h-[600px] bg-zinc-900 rounded-[3.5rem] border-[10px] border-zinc-800 shadow-[0_50px_100px_rgba(0,0,0,0.9)] overflow-hidden">
-              {/* Notch */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-8 bg-zinc-800 rounded-b-3xl z-30" />
-              
-              {/* App UI */}
-              <div className="w-full h-full bg-gradient-to-b from-zinc-900 to-black p-8 flex flex-col items-center justify-between">
-                <div className="mt-12 flex flex-col items-center">
-                  <div className="w-20 h-20 bg-white/5 rounded-[2rem] border border-white/10 flex items-center justify-center mb-6 shadow-2xl">
-                    <span className="text-3xl font-black rose-gold-text">AT</span>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-1.5 w-24 bg-white/20 rounded-full mx-auto" />
-                    <div className="h-1.5 w-16 bg-white/10 rounded-full mx-auto" />
-                  </div>
-                </div>
-
-                {/* App Store Button INSIDE Phone */}
-                <div className="w-full mb-8 space-y-4">
-                  <a 
-                    href={appStoreUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 bg-white text-black py-4 rounded-2xl font-bold hover:scale-105 transition-transform active:scale-95 shadow-xl"
-                  >
-                    <Apple size={20} />
-                    <span className="text-sm">Download App</span>
-                  </a>
-                  <div className="flex justify-center gap-2">
-                    {[1,2,3].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/10" />)}
-                  </div>
-                </div>
+            <a 
+              href={appStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex items-center justify-center gap-4 bg-white text-black px-10 py-6 rounded-[2rem] font-bold hover:scale-105 transition-all duration-300 active:scale-95 shadow-[0_20px_50px_rgba(255,255,255,0.1)] group"
+            >
+              <Apple size={32} className="group-hover:rotate-12 transition-transform" />
+              <div className="text-right">
+                <div className="text-xs uppercase leading-none opacity-60">Download on the</div>
+                <div className="text-2xl leading-none">App Store</div>
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Bottom CTA */}
-          <div className="mt-20 max-w-md">
-            <p className="text-white/50 text-sm leading-relaxed mb-8">
+          <div className="mt-24 max-w-md">
+            <p className="text-white/50 text-sm leading-relaxed mb-10">
               חוויית השירות של עמית צרפתי עולה שלב. הורידו עכשיו את האפליקציה הרשמית ותיהנו מניהול תורים חכם, הטבות בלעדיות ועדכונים לפני כולם.
             </p>
             <div className="flex items-center justify-center gap-6 text-white/20">
@@ -101,16 +80,6 @@ const AmitTzarfati = () => {
       <footer className="border-t border-white/5 bg-black/40 backdrop-blur-xl">
         <MadeWithDyad />
       </footer>
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-15px); }
-        }
-        .animate-float {
-          animation: float 5s ease-in-out infinite;
-        }
-      `}} />
     </div>
   );
 };
