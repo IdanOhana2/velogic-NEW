@@ -75,14 +75,6 @@ const AmitTzarfati = () => {
                 </div>
               </div>
             </div>
-
-            {/* Floating Feature Tags */}
-            <div className="absolute -right-12 top-1/4 glass-card px-4 py-2 rounded-full border-primary/20 text-[10px] font-bold tracking-widest uppercase animate-float">
-              Quick Booking
-            </div>
-            <div className="absolute -left-12 bottom-1/4 glass-card px-4 py-2 rounded-full border-primary/20 text-[10px] font-bold tracking-widest uppercase animate-float" style={{ animationDelay: '1s' }}>
-              VIP Access
-            </div>
           </div>
 
           {/* Bottom CTA */}
