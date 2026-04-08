@@ -11,8 +11,8 @@ const BetaTestingForm = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   
-  // Replace this with your actual Google Play Opt-in link
-  const googlePlayOptInUrl = "https://play.google.com/apps/testing/com.velogic.amittzarfati";
+  // Updated with the correct package name: com.amittzarfati.booking
+  const googlePlayOptInUrl = "https://play.google.com/apps/testing/com.amittzarfati.booking";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
