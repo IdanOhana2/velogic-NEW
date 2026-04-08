@@ -10,7 +10,7 @@ import AndroidDownloadModal from '@/components/AndroidDownloadModal';
 const AmitTzarfati = () => {
   const [isAndroidModalOpen, setIsAndroidModalOpen] = useState(false);
   const appStoreUrl = "https://apps.apple.com/il/app/amit-tzarfati/id6761207418";
-  const androidDownloadUrl = "https://drive.usercontent.google.com/download?id=1lvIUtznoZ69yaSrQ1ekx0NEKR2USvO2r&export=download&authuser=0";
+  const androidDownloadUrl = "https://www.dropbox.com/scl/fi/1y8pjgtcjshqmlwwmas2i/AmitTzarfati.apk?rlkey=f0o0etxt78qowjotxhi4c6s0r&st=rc0osver&dl=1";
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden selection:bg-primary/30">
