@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import DeleteAccount from "./pages/DeleteAccount";
 import AmitTzarfati from "./pages/AmitTzarfati";
+import AndroidBeta from "./pages/AndroidBeta";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/delete-my-account" element={<DeleteAccount />} />
           <Route path="/amit-tzarfati" element={<AmitTzarfati />} />
+          <Route path="/amit-tzarfati/beta" element={<AndroidBeta />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
