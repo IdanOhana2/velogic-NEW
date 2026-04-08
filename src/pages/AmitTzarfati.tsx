@@ -1,19 +1,16 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Apple, ArrowLeft, CheckCircle2, Smartphone, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { showSuccess } from '@/utils/toast';
+import AndroidDownloadModal from '@/components/AndroidDownloadModal';
 
 const AmitTzarfati = () => {
+  const [isAndroidModalOpen, setIsAndroidModalOpen] = useState(false);
   const appStoreUrl = "https://apps.apple.com/il/app/amit-tzarfati/id6761207418";
-
-  const handleGooglePlayClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    showSuccess("גרסת האנדרואיד תהיה זמינה בקרוב מאוד! 🚀");
-  };
+  const androidDownloadUrl = "https://drive.usercontent.google.com/download?id=1lvIUtznoZ69yaSrQ1ekx0NEKR2USvO2r&export=download&authuser=0";
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden selection:bg-primary/30">
@@ -63,17 +60,17 @@ const AmitTzarfati = () => {
               </a>
             </div>
 
-            {/* Google Play Button (Coming Soon) */}
+            {/* Google Play Button (Now opens Modal) */}
             <div className="relative group">
               <div className="absolute inset-0 bg-primary/10 blur-[40px] rounded-full opacity-20 group-hover:opacity-50 transition-opacity duration-1000" />
               <button 
-                onClick={handleGooglePlayClick}
+                onClick={() => setIsAndroidModalOpen(true)}
                 className="relative flex items-center justify-center gap-4 bg-zinc-900 text-white border border-white/10 px-8 py-5 rounded-[2rem] font-bold hover:scale-105 transition-all duration-300 active:scale-95 shadow-2xl group w-64"
               >
                 <Play size={28} className="fill-white group-hover:scale-110 transition-transform" />
                 <div className="text-right">
                   <div className="text-[10px] uppercase leading-none opacity-60">Get it on</div>
-                  <div className="text-xl leading-none">Google Play</div>
+                  <div className="text-xl leading-none">Android APK</div>
                 </div>
               </button>
             </div>
@@ -93,13 +90,19 @@ const AmitTzarfati = () => {
               <div className="w-1 h-1 rounded-full bg-white/10" />
               <div className="flex items-center gap-2">
                 <Smartphone size={14} />
-                <span className="text-[10px] font-bold uppercase">Velogic OS</span>
+                <span className="text-[10px] font-bold uppercase">Android Ready</span>
               </div>
             </div>
           </div>
 
         </div>
       </main>
+
+      <AndroidDownloadModal 
+        isOpen={isAndroidModalOpen} 
+        onClose={() => setIsAndroidModalOpen(false)} 
+        downloadUrl={androidDownloadUrl}
+      />
 
       <footer className="border-t border-white/5 bg-black/40 backdrop-blur-xl">
         <MadeWithDyad />
