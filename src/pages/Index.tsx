@@ -7,6 +7,7 @@ import LoadingScreen from '@/components/LoadingScreen';
 import TechBackground from '@/components/TechBackground';
 import BrandSection from '@/components/BrandSection';
 import FeaturesSection from '@/components/FeaturesSection';
+import PortfolioSection from '@/components/PortfolioSection';
 import Navbar from '@/components/Navbar';
 import HeroVideoBackground from '@/components/HeroVideoBackground';
 import { MadeWithDyad } from "@/components/made-with-dyad";
@@ -45,6 +46,8 @@ const Index = () => {
         {/* Content Sections - These will have the TechBackground behind them */}
         <div className="container mx-auto px-4 space-y-32 pb-32">
           <BrandSection />
+
+          <PortfolioSection />
 
           <FeaturesSection />
 
