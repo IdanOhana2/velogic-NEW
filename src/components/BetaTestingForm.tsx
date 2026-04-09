@@ -1,12 +1,12 @@
 "use client";
 
 import React from 'react';
-import { ExternalLink, Users, Download, ArrowLeft } from 'lucide-react';
+import { ExternalLink, Users, Download } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const BetaTestingForm = () => {
   const googleGroupsUrl = "https://groups.google.com/u/1/g/testersamit";
-  const googlePlayOptInUrl = "https://play.google.com/apps/testing/com.amittzarfati.booking";
+  const playStoreUrl = "https://play.google.com/store/apps/details?id=com.amittzarfati.booking";
 
   return (
     <div className="glass-card p-8 md:p-12 rounded-[2.5rem] border-primary/20 relative overflow-hidden">
@@ -48,13 +48,13 @@ const BetaTestingForm = () => {
             </div>
             <div className="text-right flex-1">
               <h3 className="text-xl font-bold text-white mb-2">שלב 2: הורדת האפליקציה</h3>
-              <p className="text-white/60 text-sm mb-4">לאחר ההצטרפות לקבוצה, תוכלו לאשר את ההשתתפות ולהוריד מהחנות.</p>
+              <p className="text-white/60 text-sm mb-4">לאחר ההצטרפות לקבוצה, תוכלו להוריד את האפליקציה ישירות מהחנות.</p>
               <Button 
                 asChild
                 className="rounded-full bg-primary hover:bg-primary/80 text-black font-black px-8 py-6 text-lg shadow-[0_10px_30px_rgba(226,176,145,0.2)]"
               >
-                <a href={googlePlayOptInUrl} target="_blank" rel="noopener noreferrer">
-                  אישור והורדה ב-Google Play
+                <a href={playStoreUrl} target="_blank" rel="noopener noreferrer">
+                  הורדה ב-Google Play
                   <ExternalLink className="mr-2 w-5 h-5" />
                 </a>
               </Button>
