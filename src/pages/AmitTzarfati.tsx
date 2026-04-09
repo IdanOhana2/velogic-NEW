@@ -10,7 +10,7 @@ import AndroidDownloadModal from '@/components/AndroidDownloadModal';
 const AmitTzarfati = () => {
   const [isAndroidModalOpen, setIsAndroidModalOpen] = useState(false);
   const appStoreUrl = "https://apps.apple.com/il/app/amit-tzarfati/id6761207418";
-  const androidDownloadUrl = "https://www.dropbox.com/scl/fi/1y8pjgtcjshqmlwwmas2i/AmitTzarfati.apk?rlkey=f0o0etxt78qowjotxhi4c6s0r&st=rc0osver&dl=1";
+  const playStoreUrl = "https://play.google.com/store/apps/details?id=com.amittzarfati.booking";
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden selection:bg-primary/30">
@@ -60,19 +60,21 @@ const AmitTzarfati = () => {
               </a>
             </div>
 
-            {/* Google Play Button (Now opens Modal) */}
+            {/* Google Play Button */}
             <div className="relative group">
               <div className="absolute inset-0 bg-primary/10 blur-[40px] rounded-full opacity-20 group-hover:opacity-50 transition-opacity duration-1000" />
-              <button 
-                onClick={() => setIsAndroidModalOpen(true)}
+              <a 
+                href={playStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative flex items-center justify-center gap-4 bg-zinc-900 text-white border border-white/10 px-8 py-5 rounded-[2rem] font-bold hover:scale-105 transition-all duration-300 active:scale-95 shadow-2xl group w-64"
               >
                 <Play size={28} className="fill-white group-hover:scale-110 transition-transform" />
                 <div className="text-right">
                   <div className="text-[10px] uppercase leading-none opacity-60">Get it on</div>
-                  <div className="text-xl leading-none">Android APK</div>
+                  <div className="text-xl leading-none">Google Play</div>
                 </div>
-              </button>
+              </a>
             </div>
 
           </div>
@@ -97,12 +99,6 @@ const AmitTzarfati = () => {
 
         </div>
       </main>
-
-      <AndroidDownloadModal 
-        isOpen={isAndroidModalOpen} 
-        onClose={() => setIsAndroidModalOpen(false)} 
-        downloadUrl={androidDownloadUrl}
-      />
 
       <footer className="border-t border-white/5 bg-black/40 backdrop-blur-xl">
         <MadeWithDyad />
