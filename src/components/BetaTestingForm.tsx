@@ -1,119 +1,72 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle, Loader2, ExternalLink } from 'lucide-react';
+import React from 'react';
+import { ExternalLink, Users, Download, ArrowLeft } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { showSuccess, showError } from '@/utils/toast';
 
 const BetaTestingForm = () => {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  
-  // Updated with the correct package name: com.amittzarfati.booking
+  const googleGroupsUrl = "https://groups.google.com/u/1/g/testersamit";
   const googlePlayOptInUrl = "https://play.google.com/apps/testing/com.amittzarfati.booking";
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
-
-    try {
-      const response = await fetch('https://uwmnwnorkndigojnbmug.supabase.co/functions/v1/add-tester', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer sb_publishable_bXHR1UTNLsOo5Fi6FsAEwA_EMR3r9w_'
-        },
-        body: JSON.stringify({ email })
-      });
-
-      if (!response.ok) throw new Error('Failed to add tester');
-
-      setStatus('success');
-      showSuccess("הוספת בהצלחה לרשימת הבודקים!");
-    } catch (err) {
-      console.error(err);
-      setStatus('error');
-      showError("חלה שגיאה, נסו שוב מאוחר יותר");
-    }
-  };
-
-  if (status === 'success') {
-    return (
-      <div className="glass-card p-8 md:p-12 rounded-[2.5rem] border-primary/20 text-center animate-in zoom-in duration-500">
-        <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-          <CheckCircle2 className="w-10 h-10 text-green-400 animate-bounce" />
-        </div>
-        <h2 className="text-3xl font-black text-white mb-4">מעולה! הוספנו אותך</h2>
-        <p className="text-white/60 mb-8 leading-relaxed">
-          כעת עליך ללחוץ על הכפתור למטה כדי לאשר את ההזמנה בחנות ה-Google Play ולהתחיל להשתמש באפליקציה.
-        </p>
-        <Button 
-          asChild
-          className="rounded-full bg-primary hover:bg-primary/80 text-black font-bold px-8 py-6 text-lg group"
-        >
-          <a href={googlePlayOptInUrl} target="_blank" rel="noopener noreferrer">
-            אישור הזמנה ב-Google Play
-            <ExternalLink className="mr-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </a>
-        </Button>
-      </div>
-    );
-  }
 
   return (
     <div className="glass-card p-8 md:p-12 rounded-[2.5rem] border-primary/20 relative overflow-hidden">
       <div className="relative z-10">
-        <div className="text-right mb-8">
+        <div className="text-right mb-10">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-            קבלת גישה מוקדמת לאפליקציית <span className="rose-gold-text">עמית צרפתי</span>
+            הצטרפות לבטא של <span className="rose-gold-text">עמית צרפתי</span>
           </h2>
           <p className="text-white/50 leading-relaxed">
-            הזינו את המייל המחובר לחנות ה-Google Play שלכם כדי להצטרף לרשימת הבודקים ולקבל עדכונים לפני כולם.
+            כדי להתקין את האפליקציה באנדרואיד, יש לבצע שני שלבים פשוטים:
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6 text-right">
-          <div className="space-y-2">
-            <Label htmlFor="email" className="text-white/80 mr-1">אימייל (Google Play)</Label>
-            <Input 
-              id="email" 
-              type="email" 
-              required 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your-email@gmail.com"
-              className="bg-white/5 border-white/10 rounded-2xl py-6 text-right focus:border-primary/50 transition-all text-lg"
-              disabled={status === 'loading'}
-            />
+        <div className="space-y-8">
+          {/* Step 1 */}
+          <div className="flex flex-col md:flex-row-reverse items-center gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all group">
+            <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <Users className="w-8 h-8 text-primary" />
+            </div>
+            <div className="text-right flex-1">
+              <h3 className="text-xl font-bold text-white mb-2">שלב 1: הצטרפות לקבוצת הבודקים</h3>
+              <p className="text-white/60 text-sm mb-4">לחצו על הכפתור והצטרפו לקבוצה עם חשבון הגוגל שלכם.</p>
+              <Button 
+                asChild
+                className="rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/10 px-6"
+              >
+                <a href={googleGroupsUrl} target="_blank" rel="noopener noreferrer">
+                  הצטרפות ל-Google Groups
+                  <ExternalLink className="mr-2 w-4 h-4" />
+                </a>
+              </Button>
+            </div>
           </div>
 
-          {status === 'error' && (
-            <div className="flex items-center gap-2 text-red-400 text-sm justify-end bg-red-400/10 p-3 rounded-xl border border-red-400/20">
-              <span>חלה שגיאה, נסו שוב מאוחר יותר</span>
-              <AlertCircle size={16} />
+          {/* Step 2 */}
+          <div className="flex flex-col md:flex-row-reverse items-center gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all group">
+            <div className="w-16 h-16 rounded-2xl bg-green-500/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <Download className="w-8 h-8 text-green-400" />
             </div>
-          )}
+            <div className="text-right flex-1">
+              <h3 className="text-xl font-bold text-white mb-2">שלב 2: הורדת האפליקציה</h3>
+              <p className="text-white/60 text-sm mb-4">לאחר ההצטרפות לקבוצה, תוכלו לאשר את ההשתתפות ולהוריד מהחנות.</p>
+              <Button 
+                asChild
+                className="rounded-full bg-primary hover:bg-primary/80 text-black font-black px-8 py-6 text-lg shadow-[0_10px_30px_rgba(226,176,145,0.2)]"
+              >
+                <a href={googlePlayOptInUrl} target="_blank" rel="noopener noreferrer">
+                  אישור והורדה ב-Google Play
+                  <ExternalLink className="mr-2 w-5 h-5" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
 
-          <Button 
-            type="submit" 
-            disabled={status === 'loading'}
-            className="w-full py-8 rounded-2xl bg-primary hover:bg-primary/80 text-black font-black text-xl transition-all group shadow-[0_10px_30px_rgba(226,176,145,0.2)]"
-          >
-            {status === 'loading' ? (
-              <div className="flex items-center gap-3">
-                <Loader2 className="w-6 h-6 animate-spin" />
-                מוסיף אותך לרשימה...
-              </div>
-            ) : (
-              <div className="flex items-center gap-3">
-                <Send className="w-6 h-6 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
-                הוסף אותי כבודק
-              </div>
-            )}
-          </Button>
-        </form>
+        <div className="mt-10 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-right">
+          <p className="text-amber-200/80 text-xs leading-relaxed">
+            * שימו לב: יש להשתמש באותו חשבון גוגל (Gmail) גם להצטרפות לקבוצה וגם בחנות האפליקציות.
+          </p>
+        </div>
       </div>
 
       {/* Decorative background */}
